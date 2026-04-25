@@ -1,23 +1,29 @@
-pipelien(
-  agent any
-  stage('Git Collab Link')(
-    steps(
-      git 'https://github.com/szabadospatrik/jenkinstest'
-    )
-  )
-  stage('echo command')(
-    steps(
-      sh 'echo "Welcome to the app"'
-    )
-  )
-  stage('test')(
-    steps(
-      sh 'echo "This is the test"'
-    )
-  )
-  stage('deployment')(
-    steps(
-      sh 'echo "this is the deployment"'
-    )
-  )
-)
+pipeline {
+    agent any
+
+    stages {
+        stage('Git Collab Link') {
+            steps {
+                git 'https://github.com/szabadospatrik/jenkinstest'
+            }
+        }
+
+        stage('echo command') {
+            steps {
+                sh 'echo "Welcome to the app"'
+            }
+        }
+
+        stage('test') {
+            steps {
+                sh 'echo "This is the test"'
+            }
+        }
+
+        stage('deployment') {
+            steps {
+                sh 'echo "This is the deployment"'
+            }
+        }
+    }
+}
