@@ -10,19 +10,19 @@ pipeline {
 
         stage('echo command') {
             steps {
-                sh 'echo "Welcome to the app"'
+                bat 'echo "Welcome to the app"'
             }
         }
 
         stage('test') {
             steps {
-                sh 'echo "This is the test"'
+                bat 'echo "This is the test"'
             }
         }
 
         stage('deployment') {
             steps {
-                sh 'echo "This is the deployment"'
+                bat 'echo "This is the deployment"'
             }
         }
     }
